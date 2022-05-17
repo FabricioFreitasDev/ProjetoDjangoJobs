@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'title' %}
+     Cadastro
+{% endblock %}
+
+{% block 'head' %}
+     <link rel="stylesheet" href="{% static 'autenticacao/css/cadastro.css' %}">
+{% endblock %}
+
+{% block 'body' %}
+
+     <header class="min-h-screen bg-black bg-opacity-75 bg-blend-overlay showcase border-gray-600 border-b-8 flex justify-center items-center bg-no-repeat"  style="background-image: url('{% static 'autenticacao/img/Mainframe2.jpg' %}');">
+          <div class="box">
+               <form action="{% url 'cadastro' %}" method="POST">{% csrf_token %}
+                    {% if messages %}
+                         {% for message in messages %}
+                              <div class="alert {{message.tags}}">
+                              {{message}}
+                              </div>
+                         {% endfor %}
+                    {% endif %}
+                    <h1 class="titulo font-degrade borda-bottom-degrade">INSCREVA-SE</h1>
+                    <br>
+                    <span class="span-descricao">Nome de usuário:</span>
+                    <input type="text" class="form-control input-cadastro" name="username">
+                    <br>
+                    <span class="span-descricao">Senha:</span>
+                    <input type="password" class="form-control input-cadastro" name="password">
+                    <br>
+                    <span class="span-descricao">Confirmar senha:</span>
+                    <input type="password" class="form-control input-cadastro" name="confirm-password">
+                    <br>
+                    <input type="submit" value="CADASTRAR" class="btn btn-success btn-lg">
+                    <a href="{% url 'logar' %}" class="btn btn-primary btn-lg">LOGIN</a>
+               </form>
+          </div>
+     </header>
+     <footer class=" px-5 py-10 ">
+        <ul class="flex justify-between items-center">
+           <li>&copy; 2022</li>
+            <li> <ion-icon name="logo-python"></ion-icon> Feito com Python (Django) Dev-Freitas</li>
+            <li>Job´s</li>
+        </ul>
+    </footer>
+{% endblock %}

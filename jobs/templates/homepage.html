@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'title' %}
+     Homepage do Meu Site
+{% endblock %}
+
+
+{% block 'head' %}
+     <link rel="stylesheet" href="{% static 'jobs/css/encontrar_jobs.css' %}">
+
+{% endblock %}
+
+
+{% block 'body' %}
+
+    <header class="min-h-screen bg-black bg-opacity-75 bg-blend-overlay showcase border-gray-600 border-b-8 flex justify-center items-center bg-no-repeat"  style="background-image: url('{% static 'autenticacao/img/Mainframe2.jpg' %}');">
+         <section class='flex flex-col md:flex-row items-center border-gray-900' style="min-height: 70vh;" >
+         <div class=' flex justify-center items-center'>
+              <img  src="{% static 'autenticacao/img/Qual-a-tecnologia.jpg' %}" class="w-8/12" alt="">
+         </div>
+        </section>
+    </header>
+    <footer class=" px-5 py-10 ">
+        <ul class="flex justify-between items-center">
+
+            <li>&copy; 2021</li>
+            <li> <ion-icon name="logo-python"></ion-icon> Feito com Python (Django) Dev-Freitas</li>
+            <li>Job´s</li>
+        </ul>
+    </footer>
+
+{% endblock %}
+
+
+
+
