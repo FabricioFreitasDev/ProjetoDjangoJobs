@@ -1,1 +1,1 @@
-web: gunicorn projetojobs.wsgi --log-file -
+web: gunicorn SiteDjango.wsgi --log-file -
